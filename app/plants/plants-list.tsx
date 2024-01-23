@@ -25,15 +25,15 @@ export function PlantsList({plants}) {
                     </div>
                     <div className="flex-1 min-w-0">
                         <Link href={`/plants/${plant["id"]}`}>
-                            <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            <p className="text-sm font-medium text-gray-900 truncate dark:text-white hover:underline">
                                 {plant["scientific_name"]}
                             </p>
                         </Link>
                         <span onClick={_ => handleSearch(plant["family"], "family_name")}
-                              className="bg-pink-100 text-pink-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300">
+                              className="cursor-pointer bg-pink-100 text-pink-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300 hover:underline">
                                     {plant["family"]}</span>
                         <span onClick={_ => handleSearch(plant["genus"], "genus_name")}
-                              className="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">
+                              className="cursor-pointer bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300 hover:underline">
                                     {plant["genus"]}</span>
 
                     </div>

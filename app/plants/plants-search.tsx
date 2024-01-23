@@ -34,6 +34,9 @@ export default function PlantsSearch({placeholder}: { placeholder: string }) {
         const params = new URLSearchParams(searchParams);
         params.delete('query');
         params.delete('queryType');
+        setQueryType('scientific_name');
+        setQuery("")
+        params.set('page', '1');
         replace(`${pathname}?${params.toString()}`);
     }
 
