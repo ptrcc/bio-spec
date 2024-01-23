@@ -10,19 +10,19 @@ export default async function PlantPage({params: {id}}: {
             {plant["common_name"]}</h2>
 
         <div className="flex mb-4">
-        <span
-            className="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">
-                                    {plant["main_species"]["genus"]}</span>
             <span
                 className="bg-pink-100 text-pink-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300">
                                     {plant["main_species"]["family"]}</span>
+            <span
+                className="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">
+                                    {plant["main_species"]["genus"]}</span>
         </div>
         <img className="object-contain h-50 w-100" src={plant["image_url"]}/>
     </main>
 }
 
 async function getPlant(id: string) {
-    const token = "2h0izUSfnokKTXPsEp165op_2_CHwAHwrjd7JWNtPz8"
+    const token = process.env.TREFFLE_TOKEN
     const response = await fetch(
         "https://trefle.io/api/v1/plants/" + id + "?token=" + token
     );

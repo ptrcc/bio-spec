@@ -1,9 +1,9 @@
 import {Suspense} from "react";
-import Pagination from "@/components/pagination";
+import Pagination from "@/app/components/common/pagination";
 import PlantsSearch from "@/app/plants/plants-search";
 import {PlantsList} from "@/app/plants/plants-list";
 
-export default async function Page({searchParams}: {
+export default async function Plants({searchParams}: {
     searchParams?: {
         query?: string;
         queryType?: string;
@@ -33,7 +33,7 @@ export default async function Page({searchParams}: {
 }
 
 async function getPlants(page: number, query: string, queryType: string) {
-    const token = "2h0izUSfnokKTXPsEp165op_2_CHwAHwrjd7JWNtPz8"
+    const token = process.env.TREFFLE_TOKEN
     const response = await fetch(
         "https://trefle.io/api/v1/plants?token=" + token + "&page=" + page + "&filter[" + queryType + "]=" + query
     );

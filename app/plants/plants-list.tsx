@@ -29,12 +29,13 @@ export function PlantsList({plants}) {
                                 {plant["scientific_name"]}
                             </p>
                         </Link>
-                        <span onClick={_ => handleSearch(plant["genus"], "genus_name")}
-                            className="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">
-                                    {plant["genus"]}</span>
                         <span onClick={_ => handleSearch(plant["family"], "family_name")}
-                            className="bg-pink-100 text-pink-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300">
+                              className="bg-pink-100 text-pink-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300">
                                     {plant["family"]}</span>
+                        <span onClick={_ => handleSearch(plant["genus"], "genus_name")}
+                              className="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">
+                                    {plant["genus"]}</span>
+
                     </div>
                 </div>
             </li>
