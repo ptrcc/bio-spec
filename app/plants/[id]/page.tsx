@@ -1,3 +1,5 @@
+import {randomUUID} from "crypto";
+
 export default async function PlantPage({params: {id}}: {
     params: { id: string };
 }) {
@@ -24,8 +26,8 @@ export default async function PlantPage({params: {id}}: {
             <h2 className="mb-4 mt-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-2xl dark:text-white">
                 Leafs</h2>
             <div className="grid grid-cols-3 gap-2">
-                {images.leaf.map((l) =>
-                    <img className="object-contain h-32 w-32 " src={l["image_url"]}/>
+                {images.leaf.map((l: any) =>
+                    <img key={randomUUID()} className="object-contain h-32 w-32 " src={l["image_url"]}/>
                 )}
             </div>
         </div>
@@ -34,8 +36,8 @@ export default async function PlantPage({params: {id}}: {
             <h2 className="mb-4 mt-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-2xl dark:text-white">
                 Habit</h2>
             <div className="grid grid-cols-3 gap-2">
-                {images.habit.map((l) =>
-                    <img className="object-contain h-32 w-32" src={l["image_url"]}/>
+                {images.habit.map((l: any) =>
+                    <img key={randomUUID()} className="object-contain h-32 w-32" src={l["image_url"]}/>
                 )}
             </div>
         </div>
@@ -44,8 +46,8 @@ export default async function PlantPage({params: {id}}: {
             <h2 className="mb-4 mt-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-2xl dark:text-white">
                 Fruit</h2>
             <div className="grid grid-cols-3 gap-2">
-                {images.fruit.map((l) =>
-                    <img className="object-contain h-32 w-32" src={l["image_url"]}/>
+                {images.fruit.map((l: any) =>
+                    <img key={randomUUID()} className="object-contain h-32 w-32" src={l["image_url"]}/>
                 )}
             </div>
         </div>
@@ -54,16 +56,16 @@ export default async function PlantPage({params: {id}}: {
             <h2 className="mb-4 mt-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-2xl dark:text-white">
                 Bark</h2>
             <div className="grid grid-cols-3 gap-2">
-                {images.bark.map((l) =>
-                    <img className="object-contain h-32 w-32" src={l["image_url"]}/>
+                {images.bark.map((l: any) =>
+                    <img key={randomUUID()} className="object-contain h-32 w-32" src={l["image_url"]}/>
                 )}
             </div>
         </div>
         }
         <h2 className="mb-4 mt-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-2xl dark:text-white">
             Sources</h2>
-        {plant.sources && plant.sources.filter(s => s.name === "PlantNet").map(s =>
-            <a href={s.url} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{s.name}</a>
+        {plant.sources && plant.sources.filter((s: any) => s.name === "PlantNet").map((s: any) =>
+            <a key={s.name} href={s.url} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{s.name}</a>
         )}
     </main>
 }

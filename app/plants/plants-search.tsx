@@ -12,8 +12,8 @@ export default function PlantsSearch({placeholder}: { placeholder: string }) {
     const [query, setQuery] = useState<string>("");
 
     useEffect(() => {
-        if (searchParams.get('queryType') != null) {
-            setQueryType(searchParams.get('queryType')?.toString())
+        if (searchParams.get('queryType')) {
+            setQueryType(searchParams.get('queryType')!.toString())
         }
     }, [searchParams])
 
