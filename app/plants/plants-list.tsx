@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
-import {randomUUID} from "crypto";
+import {v4 as uuidv4} from 'uuid';
 
 export function PlantsList({plants}: {plants: any[]}) {
     const searchParams = useSearchParams();
@@ -19,7 +19,7 @@ export function PlantsList({plants}: {plants: any[]}) {
     }
 
     return <ul className="max-w-md divide-gray-200 dark:divide-gray-700 mt-5">
-        {plants.map((plant: any) => <li key={randomUUID()} className="pb-3 sm:pb-4">
+        {plants.map((plant: any) => <li key={uuidv4()} className="pb-3 sm:pb-4">
                 <div className="flex items-center space-x-4 rtl:space-x-reverse">
                     <div className="flex-shrink-0">
                         <img className="w-10 h-10 " src={plant["image_url"]}/>

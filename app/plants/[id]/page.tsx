@@ -1,4 +1,4 @@
-import {randomUUID} from "crypto";
+import {v4 as uuidv4} from 'uuid';
 
 export default async function PlantPage({params: {id}}: {
     params: { id: string };
@@ -27,7 +27,7 @@ export default async function PlantPage({params: {id}}: {
                 Leafs</h2>
             <div className="grid grid-cols-3 gap-2">
                 {images.leaf.map((l: any) =>
-                    <img key={randomUUID()} className="object-contain h-32 w-32 " src={l["image_url"]}/>
+                    <img key={uuidv4()} className="object-contain h-32 w-32 " src={l["image_url"]}/>
                 )}
             </div>
         </div>
@@ -37,7 +37,7 @@ export default async function PlantPage({params: {id}}: {
                 Habit</h2>
             <div className="grid grid-cols-3 gap-2">
                 {images.habit.map((l: any) =>
-                    <img key={randomUUID()} className="object-contain h-32 w-32" src={l["image_url"]}/>
+                    <img key={uuidv4()} className="object-contain h-32 w-32" src={l["image_url"]}/>
                 )}
             </div>
         </div>
@@ -47,7 +47,7 @@ export default async function PlantPage({params: {id}}: {
                 Fruit</h2>
             <div className="grid grid-cols-3 gap-2">
                 {images.fruit.map((l: any) =>
-                    <img key={randomUUID()} className="object-contain h-32 w-32" src={l["image_url"]}/>
+                    <img key={uuidv4()} className="object-contain h-32 w-32" src={l["image_url"]}/>
                 )}
             </div>
         </div>
@@ -57,7 +57,7 @@ export default async function PlantPage({params: {id}}: {
                 Bark</h2>
             <div className="grid grid-cols-3 gap-2">
                 {images.bark.map((l: any) =>
-                    <img key={randomUUID()} className="object-contain h-32 w-32" src={l["image_url"]}/>
+                    <img key={uuidv4()} className="object-contain h-32 w-32" src={l["image_url"]}/>
                 )}
             </div>
         </div>
